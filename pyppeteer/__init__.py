@@ -23,6 +23,6 @@ logger.addHandler(_log_handler)
 logger.propagate = False
 # logger.setLevel(logging.DEBUG)
 
-from pyppeteer.launcher import launch, executablePath  # noqa: E402
+from .launcher import launch, executablePath  # noqa: E402
 
 __all__ = ['launch', 'executablePath']
