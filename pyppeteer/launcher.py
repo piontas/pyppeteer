@@ -65,7 +65,6 @@ class Launcher(object):
                 '--disable-gpu',
                 '--hide-scrollbars',
                 '--mute-audio',
-                '--no-sandbox'
             ]
         if 'executablePath' in self.options:
             self.exec = self.options['executablePath']
