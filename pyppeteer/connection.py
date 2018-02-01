@@ -71,7 +71,7 @@ class Connection(EventEmitter):
             method=method,
             params=params,
         ))
-        logger.debug(f'SEND▶: {msg}')
+        logger.debug(f'SEND>: {msg}')
         asyncio.ensure_future(self._async_send(msg))
         callback = asyncio.get_event_loop().create_future()
         self._callbacks[_id] = callback
@@ -104,7 +104,7 @@ class Connection(EventEmitter):
             self.emit(method, params)
 
     def _on_message(self, message: str) -> None:
-        logger.debug(f'◀RECV: {message}')
+        logger.debug(f'<RECV: {message}')
         msg = json.loads(message)
         if msg.get('id') in self._callbacks:
             self._on_response(msg)
